@@ -1,16 +1,18 @@
 import Image from "next/image";
-import { products } from "@/products";
 import CardHalf from "@/components/card-half";
 import Link from "next/link";
+import { getAllProducts } from "@/lib/sqldatabase";
 
-export default function Home() {  
-
+export default function Home() { 
+  
+  const products = getAllProducts()
+  
   return (
     <> 
     <div className="flex flex-wrap justify-evenly mt-12"> 
       {products.map(product => (
         <Link key={product.id} href={`/${product.id}`}>
-        <CardHalf  image={`/prodimg/${product.url}`} name={product.name} price={product.price} />
+        <CardHalf  image={product.image} name={product.name} price={product.price} />
         </Link>
       )
         )}

@@ -38,7 +38,7 @@ export default function AddProductPage(){
         
                 
                 <label className="block" htmlFor="Image">Upload Image</label>
-                <input className="w-full file:p-1 file:bg-gradient-to-r from-cyan-500 to-blue-500 file:text-white text-slate-700 p-1 rounded-md mt-2 mb-4 border border-slate-900" type="file" accept="image/png, image/jpeg" id="image" name="image" required />
+                <input className="w-full file:p-1 file:bg-gradient-to-r from-cyan-500 to-blue-500 file:text-white text-slate-700 p-1 rounded-md mt-2 mb-4 border border-slate-900" type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="image" required />
                 
                 <FormSubmit btnText="Add Product" />
             </form>  

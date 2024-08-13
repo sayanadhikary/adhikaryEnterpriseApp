@@ -1,18 +1,17 @@
 import Image from "next/image";
-import { products } from "@/products";
+import { getProduct } from "@/lib/sqldatabase";
 
 export default function ProductDetails({params}){
     const productid = params.product
-    const productData = products.find(prod => prod.id === productid)
+    const productData = getProduct(productid)
     return <>
     <div className="m-4 mt-16">
-    <Image className="mx-auto" src={`/prodimg/${productData.url}`} alt={productData.name} width={500} height={500} />
+    <Image className="mx-auto" src={productData.image} alt={productData.name} width={500} height={500} />
     <div className="my-6 mx-2">
-        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">name:</span> <span>{productData.name}</span></p>
-        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">price:</span> <span>{productData.price}</span></p>
-        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">category:</span> <span>{productData.category}</span></p>
-        <p className="text-xs my-2 py-2">{productData.description}</p>
-        <p className="text-xs my-2 py-2">{productData.keywords}</p>
+        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">Name:</span> <span>{productData.name}</span></p>
+        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">Price:</span> <span>{productData.price}</span></p>
+        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">Brand:</span> <span>{productData.brand}</span></p>
+        <p className="text-xs my-2 py-2"><span className="font-light text-gray-300">Category:</span> <span>{productData.category}</span></p>
     </div>
     </div>
     </>

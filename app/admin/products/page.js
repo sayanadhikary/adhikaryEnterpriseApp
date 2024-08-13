@@ -1,6 +1,6 @@
 import Button from "@/components/button"
 import { getAllProducts } from "@/lib/sqldatabase"
-import { editProduct, deleteProduct } from "@/lib/actions"
+import { deleteProduct } from "@/lib/actions"
 import Link from "next/link"
 
 export default function AllProductsPage(){
@@ -54,7 +54,7 @@ export default function AllProductsPage(){
                      ₹{product.price}
                      </td>
                      <td className="px-6 py-4 flex">
-                        <form action={editProduct.bind(null, product.id)}><button className="bg-blue-500 text-white mx-1 px-3">Edit</button></form>
+                      <Link href={`/admin/products/${product.id}`}><button className="bg-blue-500 text-white mx-1 px-3">Edit</button></Link>
                         <form action={deleteProduct.bind(null, product.id)}><button className="bg-red-700 text-white mx-1 px-1" >Delete</button></form>                    
                      
                      </td>

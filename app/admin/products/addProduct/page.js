@@ -2,10 +2,10 @@ import FormSubmit from "@/components/form-submit";
 import { createProduct, createCategory, createBrand } from "@/lib/actions";
 import { getAllBrands, getAllCategories } from "@/lib/sqldatabase";
 
-export default function AddProductPage(){ 
+export default async function AddProductPage(){ 
     
-    const allCategories = getAllCategories();
-    const allBrands = getAllBrands()
+    const allCategories = await getAllCategories();
+    const allBrands = await getAllBrands()
 
     return (
          <>         

@@ -3,9 +3,13 @@ import CardHalf from "@/components/card-half";
 import Link from "next/link";
 import { getAllProducts } from "@/lib/sqldatabase";
 
-export default function Home() { 
+export default async function Home() { 
   
-  const products = getAllProducts()
+  const products = await getAllProducts()
+
+  if (!products){
+    return <h1 className="flex flex-wrap justify-evenly mt-12">No Product!</h1>
+  }
   
   return (
     <> 

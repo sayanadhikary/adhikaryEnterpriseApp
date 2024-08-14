@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "better-sqlite3": "^11.1.2",
     "cloudinary": "^2.4.0",
     "nanoid": "^5.0.7",
     "next": "14.2.5",
+    "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18"
   },

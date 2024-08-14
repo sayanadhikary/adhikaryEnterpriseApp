@@ -3,9 +3,9 @@ import { getAllProducts } from "@/lib/sqldatabase"
 import { deleteProduct } from "@/lib/actions"
 import Link from "next/link"
 
-export default function AllProductsPage(){
+export default async function AllProductsPage(){
 
-    const allProducts = getAllProducts()
+    const allProducts = await getAllProducts()
 
     return (
         <>          

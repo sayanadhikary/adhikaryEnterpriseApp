@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getProduct } from "@/lib/sqldatabase";
 
-export default function ProductDetails({params}){
+export default async function ProductDetails({params}){
     const productid = params.product
-    const productData = getProduct(productid)
+    const productData = await getProduct(productid)
     return <>
     <div className="m-4 mt-16">
     <Image className="mx-auto" src={productData.image} alt={productData.name} width={500} height={500} />

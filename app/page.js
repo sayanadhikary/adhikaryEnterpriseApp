@@ -1,26 +1,38 @@
-import Image from "next/image";
-import CardHalf from "@/components/card-half";
+
 import Link from "next/link";
-import { getAllProducts } from "@/lib/sqldatabase";
+import Image from "next/image";
+import { getAllBrands, getAllCategories } from "@/lib/sqldatabase";
+import CardThree from "@/components/card-three";
+import CardFour from "@/components/card-four";
 
 export default async function Home() { 
   
-  const products = await getAllProducts()
-
-  if (!products){
-    return <h1 className="flex flex-wrap justify-evenly mt-12">No Product!</h1>
-  }
+  const brands = await getAllBrands(); 
+  const categories = await getAllCategories();
   
   return (
     <> 
-    <div className="flex flex-wrap justify-evenly mt-12"> 
-      {products.map(product => (
-        <Link key={product.id} href={`/${product.id}`}>
-        <CardHalf  image={product.image} name={product.name} price={product.price} />
+    <div className="mt-10 p-3">
+    <Link href={"/allproducts"}><Image className="rounded-lg" src={"https://res.cloudinary.com/dluc4by6e/image/upload/v1723735806/AdhikaryEnterprise/vt5egom8x1woldic0gba.png"} alt="All Products" width={1200} height={360} />
+    </Link>
+    </div>
+    <div className="flex flex-wrap justify-evenly mt-1"> 
+      {brands.map(brand => (
+        <Link key={brand.id} href={`/brand-new/${brand.brand_name}`}>
+        <CardFour image={brand.image} name={brand.brand_name} />
         </Link>
       )
         )}
      </div>  
+
+     <div className="flex flex-wrap justify-evenly mt-2"> 
+      {categories.map(category => (
+        <Link key={category.id} href={`/category-all/${category.category_name}`}>
+        <CardThree image={category.image} name={category.category_name} />
+        </Link>
+      )
+        )}
+     </div> 
     </>
   );
 };

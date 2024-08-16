@@ -12,13 +12,13 @@ export default async function Home() {
   
   return (
     <> 
-    <div className="mt-10 p-3">
-    <Link href={"/allproducts"}><Image className="rounded-lg" src={"https://res.cloudinary.com/dluc4by6e/image/upload/v1723735806/AdhikaryEnterprise/vt5egom8x1woldic0gba.png"} alt="All Products" width={1200} height={360} />
+    <div className="mt-16 p-4">
+    <Link href={"/allproducts"}><Image className="rounded-lg mx-auto" src={"https://res.cloudinary.com/dluc4by6e/image/upload/v1723735806/AdhikaryEnterprise/vt5egom8x1woldic0gba.png"} alt="All Products" width={1200} height={360} />
     </Link>
     </div>
     <div className="flex flex-wrap justify-evenly mt-1"> 
       {brands.map(brand => (
-        <Link key={brand.id} href={`/brand-new/${brand.brand_name}`}>
+        <Link key={brand.id} href={`/brand/${brand.brand_name}`}>
         <CardFour image={brand.image} name={brand.brand_name} />
         </Link>
       )
@@ -27,7 +27,7 @@ export default async function Home() {
 
      <div className="flex flex-wrap justify-evenly mt-2"> 
       {categories.map(category => (
-        <Link key={category.id} href={`/category-all/${category.category_name}`}>
+        <Link key={category.id} href={`/category/${category.category_name}`}>
         <CardThree image={category.image} name={category.category_name} />
         </Link>
       )

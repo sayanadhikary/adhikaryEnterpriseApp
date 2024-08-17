@@ -8,7 +8,7 @@ export default async function ProductDetails({params}){
 
     return (
          <>
-    <div className="m-4 mt-16">
+    <div className="m-4 mt-16 pt-2">
     <Image className="mx-auto" src={productDetails.image} alt={productDetails.name} width={500} height={500} />
     <div className="my-6 mx-2">
         <p className="text-xs my-2 py-2"><span className="font-light text-green-500">Name: </span> <span>{productDetails.name}</span></p>

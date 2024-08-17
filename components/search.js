@@ -6,13 +6,12 @@ import Link from "next/link"
 export default function Search(){
 
     const [searchInput, setSearchInput] = useState("")
-    console.log(searchInput)
 
     return (
         <>
         <div className="flex justify-evenly p-1 pb-2" >
-            <input className="w-10/12 ml-5 text-xs p-1 rounded-md text-gray-700" type="text" id="search" name="search"
-             placeholder="Seaech in Adhikary Enterprise"  value={searchInput}
+            <input className="w-10/12 ml-5 text-sm px-2 rounded-md text-gray-700" type="text" id="search" name="search"
+             placeholder="Search in Adhikary Enterprise"  value={searchInput}
              onChange={e => setSearchInput(e.target.value)} ></input>
             <div className="w-2/12" >
             <Link href={`/search/${searchInput}`}>

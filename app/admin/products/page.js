@@ -54,8 +54,8 @@ export default async function AllProductsPage(){
                      ₹{product.price}
                      </td>
                      <td className="px-6 py-4 flex">
-                      <Link href={`/admin/products/${product.id}`}><button className="bg-blue-500 text-white mx-1 px-3">Edit</button></Link>
-                        <form action={deleteProduct.bind(null, product.id)}><button className="bg-red-700 text-white mx-1 px-1" >Delete</button></form>                    
+                      <Link href={`/admin/products/${product.id}`}><button className="bg-blue-500 text-white mx-1 px-3 rounded-md">Edit</button></Link>
+                        <form action={deleteProduct.bind(null, product.id)}><button className="bg-red-700 text-white mx-1 px-1 rounded-md" >Delete</button></form>                    
                      
                      </td>
                  </tr>

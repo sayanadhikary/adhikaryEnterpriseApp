@@ -20,7 +20,7 @@ export default async function AddProductPage(){
                 
                 <label className="block" htmlFor="Category">Category</label>
                 <select className="w-full p-1 text-gray-700 rounded-md mt-2 mb-4 border border-slate-900" type="text" id="category" name="category">
-                <option value={"General"}>General</option>
+                <option>General</option>
                     {allCategories.map(category=><option key={category.id}>{category.category_name}</option>)}                  
                     
                 </select>

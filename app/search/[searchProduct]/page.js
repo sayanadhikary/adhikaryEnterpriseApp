@@ -5,7 +5,6 @@ import CardTwo from "@/components/card-two";
 export default async function SearchedProductPage({params}){
 
 const searchedParams = decodeURI(params.searchProduct).toUpperCase();
-console.log(searchedParams)
 const searchedInput = '%'+searchedParams+'%'
 const products = await getSearchedProducts(searchedInput);
 

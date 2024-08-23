@@ -19,7 +19,7 @@ export default async function Home() {
     <div className="flex flex-wrap justify-evenly mt-1"> 
       {brands.map(brand => (
         <Link key={brand.id} href={`/brand/${brand.brand_name}`}>
-        <CardFour image={brand.image} name={brand.brand_name.substr(0, 17)} />
+        <CardFour image={brand.image} name={brand.brand_name} />
         </Link>
       )
         )}

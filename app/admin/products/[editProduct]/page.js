@@ -1,6 +1,6 @@
 import FormSubmit from "@/components/form-submit";
-import { getProduct } from "@/lib/sqldatabase";
-import { getAllBrands, getAllCategories } from "@/lib/sqldatabase";
+import { getProduct, getAllBrands, getAllCategories } from "@/lib/sqldatabase";
+import { editName, editCategory, editBrand, editPrice, editImage } from "@/lib/actions";
 import Image from "next/image";
 
 export default async function EditProductPage({params}){
@@ -14,14 +14,18 @@ const allCategories = await getAllCategories();
     return (
         <>
         <div className="mt-20 w-3/4 ml-72">
-        <form>
+        <div className="flex m-4 p-4">
+        <Image src={product.image} alt="ProductImage" width={100} height={100} />
+        <h1 className="ms-6 my-auto">{product.name}</h1>
+        </div>
+        <form action={editName.bind(null, productId)}>
           <label className="block" htmlFor="Product Name">Enter New Name</label>
           <div className="flex">
             <input className="w-2/4 me-2 p-1 rounded-md mt-2 mb-4 border border-slate-900 text-gray-700" type="text" id="productName" name="productName" placeholder={product.name} required />
             <div className="my-auto mx-2"><FormSubmit btnText={"Update"} /></div>
             </div>
         </form>
-        <form>
+        <form action={editCategory.bind(null, productId)}> 
          <label className="block" htmlFor="Product Category">Choose Another Category</label>
          <div className="flex">
          <select className="w-2/4 me-2 p-1 text-gray-700 rounded-md mt-2 mb-4 border border-slate-900" type="text" id="category" name="category">
@@ -31,7 +35,7 @@ const allCategories = await getAllCategories();
          <div className="my-auto mx-2"><FormSubmit btnText={"Update"} /></div>
          </div>
         </form>
-        <form>
+        <form action={editBrand.bind(null, productId)}>
         <label className="block" htmlFor="Product Brand">Choose Another Brand</label>
         <div className="flex">
         <select className="w-2/4 me-2 p-1 text-gray-700 rounded-md mt-2 mb-4 border border-slate-900" type="text" id="brand" name="brand" required >
@@ -41,17 +45,17 @@ const allCategories = await getAllCategories();
         <div className="my-auto mx-2"><FormSubmit btnText={"Update"} /></div>
         </div>
         </form>
-        <form>
-        <label className="block" htmlFor="Product Name">Update Price</label>
+        <form action={editPrice.bind(null, productId)}>
+        <label className="block" htmlFor="Product Price">Update Price</label>
         <div className="flex">
-        <input className="w-2/4 me-2 p-1 rounded-md mt-2 mb-4 border border-slate-900 text-gray-700" type="text" id="productName" name="productName" placeholder={product.price} required />
+        <input className="w-2/4 me-2 p-1 rounded-md mt-2 mb-4 border border-slate-900 text-gray-700" type="number" step="0.01" id="productPrice" name="productPrice" placeholder={product.price} required />
          <div className="my-auto mx-2"><FormSubmit btnText={"Update"} /></div>
          </div>
          </form>
-        <form>
-        <Image src={product.image} alt="ProductImage" width={20} height={20} />
+        <form action={editImage.bind(null, productId, product.image)}>
+        <label className="block" htmlFor="Product Image">Update Image</label>          
         <div className="flex">
-        <input className="w-2/4 me-2 p-1 rounded-md mt-2 mb-4 border border-slate-900" type="text" id="productName" name="productName" required />
+        <input className="w-2/4 me-2 p-1 rounded-md mt-2 mb-4 border border-slate-900" type="file" id="image" name="image" required />
         <div className="my-auto mx-2"><FormSubmit btnText={"Update"} /></div>
         </div>
         </form>

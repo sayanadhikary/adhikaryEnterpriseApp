@@ -6,7 +6,7 @@ export default function GlobalError({ error, reset }) {
     <html>
       <body>
         <h2>Something went wrong! Sorry from Adhikary Enterprise</h2>
-        <p>Message: {error}</p>
+        <p>Message: {error.message}</p>
         <button onClick={() => reset()}>Try again</button>
       </body>
     </html>

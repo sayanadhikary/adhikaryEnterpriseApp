@@ -41,7 +41,7 @@ export default async function AddProductPage(){
                 <input className="w-full file:p-1 file:bg-gradient-to-r from-cyan-500 to-blue-500 file:text-white p-1 rounded-md mt-2 mb-4 border border-slate-900" type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="image" required />
                 
                 <FormSubmit btnText="Add Product" />
-            </form>  
+            </form>              
             </div>
 
             <div className="container flex-auto w-1/4 mt-16 px-16 text-xs">
@@ -67,11 +67,11 @@ export default async function AddProductPage(){
                 
                 <label className="block w-full" htmlFor="Image">Upload Image</label>
                 <input className="block w-full file:p-1 file:bg-gradient-to-r from-cyan-500 to-blue-500 file:text-white p-1 rounded-md mt-2 mb-4 border border-slate-900" type="file" accept="image/png, image/jpeg" id="image" name="image" required />                              
-                <FormSubmit btnText={"Add Brand"} />
-                </form>
-                </div>
-            </div>
-            </div>
+                <FormSubmit btnText={"Add Brand"} />                
+                </form>                
+                </div>                
+            </div>            
+            </div>            
         </>
         
     )

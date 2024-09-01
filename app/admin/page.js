@@ -1,8 +1,9 @@
-export default function OrdersPage(){
-    return (
-        <>
-        <h1 className="text-center mt-20 mb-4">Orders</h1>       
 
+
+export default function OrdersPage(){
+    return (        
+        <>
+        <h1 className="text-center mt-20 mb-4">Orders</h1>     
 <div className="overflow-x-auto ml-72">
     <table className="w-5/6 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

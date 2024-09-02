@@ -2,11 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import Search from "./search"
 
-export default function Header(){
-    function handleSearch(formData){
-        const searchInput = formData.get('search')
-        console.log(searchInput)
-    }
+export default function Header(){   
     return (
     <> 
     <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-xl fixed top-0 left-0 right-0 z-10"> 

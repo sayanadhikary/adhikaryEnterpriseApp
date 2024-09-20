@@ -8,9 +8,8 @@ export default function AdminSidebar(){
             <ToastMsg />           
                <Link href={"/admin"}><li className="border-b-2 py-4">Orders</li></Link> 
                <Link href={"/admin/products"}><li className="border-b-2 py-4">Products</li></Link> 
-               <Link href={"#"}><li className="border-b-2 py-4">Users</li></Link> 
-               <Link href={"/admin/categories"}><li className="border-b-2 py-4">Categories & Brands</li></Link> 
-               <Link href={"/admin/brands"}><li className="border-b-2 py-4">Brands</li></Link>                
+               <Link href={"/admin/users"}><li className="border-b-2 py-4">Users</li></Link> 
+               <Link href={"/admin/categories"}><li className="border-b-2 py-4">Categories & Brands</li></Link>                
             </ul>
         </>
     )

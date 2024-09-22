@@ -2,7 +2,6 @@ import Link from "next/link";
 import Button from "@/components/button";
 import { getAllUsers } from "@/lib/sqldatabase";
 import { deleteUser } from "@/lib/actions";
-import ToastMsg from "@/components/toast";
 
 export default async function UsersPage(){
     const users = await getAllUsers();
@@ -11,7 +10,6 @@ export default async function UsersPage(){
         <>       
 <div className="relative my-24 ms-64">
 <Link href="/admin/users/addUser"><Button buttonText={"Add New User"} /></Link>
-{/* <ToastMsg /> */}
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>

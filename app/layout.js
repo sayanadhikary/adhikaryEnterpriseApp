@@ -2,6 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import BottomNavigation from "@/components/bottom-nav";
+import { verifyAuth } from "@/lib/lucia-auth";
+import Link from "next/link";
+import { getUserById } from "@/lib/sqldatabase";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,13 +13,24 @@ export const metadata = {
   description: "Wholesale shop",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let greetingText;
+  const result = await verifyAuth();
+
+  if (result.user){
+    const userId = result.user.id;
+  const authUser = await getUserById(userId);
+    greetingText = "Hello, " + authUser[0].first_name + " " + authUser[0].last_name
+  }else{
+    greetingText = "Hello, Login"
+  }
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <Header greetings={greetingText} />
         {children}
-        <BottomNavigation />
+        {result.user ? <BottomNavigation /> : <Link href={'/login'} className="fixed bottom-0 left-0 z-50 w-full text-center bg-slate-500">Please login</Link> }   
+        
         </body>
     </html>
   );

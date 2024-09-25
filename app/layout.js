@@ -14,12 +14,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+  
   let greetingText;
+  let authUser;
   const result = await verifyAuth();
 
   if (result.user){
     const userId = result.user.id;
-  const authUser = await getUserById(userId);
+    authUser = await getUserById(userId); 
     greetingText = "Hello, " + authUser[0].first_name + " " + authUser[0].last_name
   }else{
     greetingText = "Hello, Login"
@@ -29,7 +31,7 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         <Header greetings={greetingText} />
         {children}
-        {result.user ? <BottomNavigation /> : <Link href={'/login'} className="fixed bottom-0 left-0 z-50 w-full text-center bg-slate-500">Please login</Link> }   
+        {result.user ? <BottomNavigation newUser={authUser} /> : <Link href={'/login'} className="fixed bottom-0 left-0 z-50 w-full text-center bg-slate-500">Please login</Link> }   
         
         </body>
     </html>

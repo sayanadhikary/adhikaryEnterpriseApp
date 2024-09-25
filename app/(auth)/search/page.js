@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getAllProducts } from "@/lib/sqldatabase";
 import CardTwo from "@/components/card-two";
 
-export default async function AllProductsPage() { 
+export default async function AllSearchedPage() { 
   
   const products = await getAllProducts()
 

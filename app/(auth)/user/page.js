@@ -1,6 +1,10 @@
+'use client'
+
 import { logout } from "@/lib/auth";
+import { useStorage } from "@/zustand/store";
 
 export default function UserPage(){
+    const user = useStorage((state) => state.user)[0]
     return (
         <>       
 
@@ -20,23 +24,16 @@ export default function UserPage(){
                     Full name
                 </dt>
                 <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
-                    John Doe
+                    {user && user.first_name} {user && user.last_name}
                 </dd>
             </div>
-            <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium">
-                    Email address
-                </dt>
-                <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
-                    johndoe@example.com
-                </dd>
-            </div>
+           
             <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium">
                     Phone number
                 </dt>
                 <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
-                    (123) 456-7890
+                    {user && user.phone_number}
                 </dd>
             </div>
             <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -44,8 +41,7 @@ export default function UserPage(){
                     Address
                 </dt>
                 <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
-                    123 Main St<br/>
-                     Anytown, USA 12345
+                    {user && user.address}
                 </dd>
             </div>
         </dl>

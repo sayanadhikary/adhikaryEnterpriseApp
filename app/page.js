@@ -12,7 +12,7 @@ export default async function Home() {
   
   return (
     <> 
-    <div className="my-20 p-4">
+    <div className="mt-20 p-4">
     <Link href={"/allproducts"}><Image className="rounded-lg mx-auto" src={"https://res.cloudinary.com/dluc4by6e/image/upload/v1723735806/AdhikaryEnterprise/vt5egom8x1woldic0gba.png"} alt="All Products" width={1200} height={360} />
     </Link>
     </div>
@@ -25,7 +25,7 @@ export default async function Home() {
         )}
      </div>  
 
-     <div className="flex flex-wrap justify-evenly mt-2"> 
+     <div className="flex flex-wrap justify-evenly mt-2 mb-16"> 
       {categories.map(category => (
         <Link key={category.id} href={`/category/${category.category_name}`}>
         <CardThree image={category.image} name={category.category_name} />

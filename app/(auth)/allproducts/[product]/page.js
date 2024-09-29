@@ -10,16 +10,19 @@ export default async function ProductDetails({params}){
 
     return (
          <>
-    <div className="m-4 my-20 pt-2">
-    <Image className="mx-auto" src={productDetails.image} alt={productDetails.name} width={500} height={500} />
-    <div className="my-6 mx-2">
-        <p className="text-xs my-2 py-2"><span className="font-light text-green-500">Name: </span> <span>{productDetails.name}</span></p>
-        <p className="text-xs my-2 py-2"><span className="font-light text-green-500">Price: </span> <span>₹ {productDetails.price}</span></p>
-        <p className="text-xs my-2 py-2"><span className="font-light text-green-500">Brand: </span> <span>{productDetails.brand}</span></p>
-        <p className="text-xs my-2 py-2"><span className="font-light text-green-500">Category: </span> <span>{productDetails.category}</span></p>
+    <div className="m-4 my-16 pt-4">
+    <Image className="object-contain h-96 w-full" src={productDetails.image} alt={productDetails.name} width={500} height={500} />
+    <div className="my-4 mx-2">
+        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{productDetails.name}</h5>
+        <h2 className="my-2 text-lg font-semibold text-gray-900 dark:text-white">Details</h2>
+            <ul className="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                <li>Category : {productDetails.category}</li>
+                <li>Brand : {productDetails.brand}</li>
+            </ul>
+        <p className="my-4 text-3xl font-bold text-gray-900 dark:text-white">₹{productDetails.price}</p>
     </div>   
     <ProductQtyInp productId={productDetails.id} /> 
-    <AddToCart product={productDetails} />
+    <AddToCart product={productDetails} />    
     </div>
     </>
     )

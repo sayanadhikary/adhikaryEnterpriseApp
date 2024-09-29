@@ -12,7 +12,7 @@ export default function Cart(){
     const decreaseByOne = useStorage((state) => state.decreaseQuantity);
     const removeItem = useStorage((state) => state.removeFromCart);
     const priceArr = cartArray.map(prod=>{
-        return +prod.price*prod.quantity
+        return prod.price*prod.quantity
       })
       const totalPrice = priceArr.reduce((a, c)=> a+c, 0)
 
@@ -105,7 +105,7 @@ export default function Cart(){
             </dl>
           </div>
 
-          <Link href="#" className="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium hover:bg-grey-400">Proceed to Checkout</Link>
+          <Link href="/checkout" className="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium hover:bg-grey-400">Proceed to Checkout</Link>
 
           <div className="flex items-center justify-center gap-2">
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>

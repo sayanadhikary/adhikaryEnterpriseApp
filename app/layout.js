@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
   if (result.user){
     const userId = result.user.id;
     authUser = await getUserById(userId); 
-    greetingText = "Hello, " + authUser[0].first_name + " " + authUser[0].last_name
+    greetingText = "Hello, " + authUser[0].first_name;
   }else{
     greetingText = "Hello, Login"
   }

@@ -11,7 +11,8 @@ export const useStorage = create((set) => ({
     decreaseQuantity: (id) => set((state) => ({cart:  state.cart.map(p => p.id === id
             ? { ...p, quantity: +p.quantity-1 }
             : p )})),
-    removeFromCart: (id) => set((state) => ({cart: state.cart.filter(p => p.id !== id)}))    
+    removeFromCart: (id) => set((state) => ({cart: state.cart.filter(p => p.id !== id)})),
+    clearCart: () => set(()=> ({cart: []}))
 }));
 
 // export const authUserData = (newUser)=> {

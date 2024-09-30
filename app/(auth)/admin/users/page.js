@@ -21,10 +21,7 @@ export default async function UsersPage(){
                 </th>
                 <th scope="col" className="px-6 py-3">
                     Address
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Action
-                </th>
+                </th>                
             </tr>
         </thead>
         <tbody>
@@ -39,9 +36,9 @@ export default async function UsersPage(){
                 <td className="px-6 py-4">
                     {user.address}
                 </td>
-                <td className="px-6 py-4">
+                {/* <td className="px-6 py-4">
                 <form action={deleteUser.bind(null, user.id)}><button className="bg-red-700 mx-1 p-1 rounded-md" >🗑️</button></form>
-                </td>
+                </td> */}
             </tr>
             ))}
             

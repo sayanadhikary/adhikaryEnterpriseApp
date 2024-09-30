@@ -40,7 +40,7 @@ const status = "Not Delivered"
 <form className="max-w-sm mt-6">
   <label htmlFor="payment" className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Select payment option</label>
   <select id="paymentOption" onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option defaultValue={"Cash on delivery"}>Cash on delivery</option>
+    <option defaultValue="Cash on delivery">Cash on delivery</option>
     <option value="pay Later">On credit (Pay later)</option>
     <option disabled value="PayNow">Pay now (Currently not available)</option>    
   </select>

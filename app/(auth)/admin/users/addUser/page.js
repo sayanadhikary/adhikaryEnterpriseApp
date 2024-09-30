@@ -1,6 +1,5 @@
 'use client'
 
-import Button from "@/components/button";
 import { useFormState } from "react-dom";
 import { signUp } from "@/lib/auth";
 import FormSubmit from "@/components/form-submit";
